@@ -39,6 +39,7 @@
 | `04-regression-script/` | 接口自动化回归脚本说明 |
 | `05-performance-testing/` | JMeter 基础性能测试方案 |
 | `06-bug-reports/` | 缺陷记录表 |
+| `07-function-testing/` | 功能测试执行记录 |
 | `postman/` | Postman Collection 导出文件 |
 | `jmeter/` | JMeter 测试计划文件 |
 | `reports/` | 测试报告导出文件 |
@@ -52,4 +53,3 @@
 ## 自动化回归
 
 项目提供 Shell + curl 形式的接口回归脚本说明，用于验证注册登录、救助审核、评论、收编、领养申请、沟通、审核通过、签收以及驳回分支等核心接口流程。
-

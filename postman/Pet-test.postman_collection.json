@@ -379,7 +379,7 @@
               "key": "file",
               "type": "file",
               "uuid": "cd104d63-090e-46a5-94b9-c7c4942e4bf6",
-              "src": "/Users/nolan/Developer/code/Java_code/Pet/backend/uploads/pets/1.png"
+              "src": "<local-test-image-path>"
             }
           ]
         },
@@ -669,7 +669,7 @@
               "key": "file",
               "type": "file",
               "uuid": "7ec35784-9b67-47ab-812b-2fa75bef7338",
-              "src": "/Users/nolan/Developer/code/Java_code/Pet/backend/uploads/pets/1.png"
+              "src": "<local-test-image-path>"
             }
           ]
         },
