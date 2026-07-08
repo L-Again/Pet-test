@@ -3,7 +3,7 @@
 ## 脚本位置
 
 ```text
-/Users/nolan/Developer/code/Java_code/Pet/backend/backend/scripts/full_flow_test.sh
+<backend-project>/backend/backend/scripts/full_flow_test.sh
 ```
 
 ## 脚本定位
@@ -30,7 +30,7 @@
 ## 执行命令
 
 ```bash
-cd /Users/nolan/Developer/code/Java_code/Pet/backend/backend
+cd <backend-project>/backend/backend
 ./scripts/full_flow_test.sh
 ```
 
@@ -77,11 +77,3 @@ BASE_URL=http://localhost:8080 ./scripts/full_flow_test.sh
 ![full_flow_test 执行结果](../reports/777cba157a86e141bfca66b4a5b8df80.png)
 
 验证结论：接口自动化回归脚本执行通过，覆盖登录与用户、救助广场主线与驳回分支、领养中心主线与驳回分支，核心状态机流转和基础 CRUD 接口验证成功。
-
-## 简历表达
-
-可以写：
-
-```text
-基于 Shell + curl 编写接口自动化回归脚本，覆盖用户注册登录、救助发布与审核、救助评论、收编、领养申请、沟通审核、签收及驳回分支等核心流程，用于快速验证后端接口和状态流转正确性。
-```

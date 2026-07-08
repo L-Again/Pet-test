@@ -2,7 +2,7 @@
 
 ## Postman 环境变量
 
-建议创建环境：`Pet Local`
+测试环境：`Pet Local`
 
 | 变量名 | 示例值 | 说明 |
 | --- | --- | --- |
@@ -91,5 +91,4 @@ newman run postman/Pet-test.postman_collection.json \
   --reporter-html-export reports/newman/Pet-test-newman-report.html
 ```
 
-如果环境文件包含 Token 或本机路径，不建议上传 GitHub。可以上传脱敏后的示例环境文件。
-
+环境文件导出前应进行脱敏处理，避免保留 Token、本机绝对路径或真实账号信息。本仓库仅保留 Collection、执行说明、脱敏环境示例和测试报告。
