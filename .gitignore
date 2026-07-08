@@ -13,3 +13,15 @@ postman/*local*.json
 postman/*environment*.json
 reports/raw/
 
+# Local learning and preparation notes, not part of the public portfolio
+software-testing-handoff.md
+GitHub上传说明.md
+Newman+HTML插件.md
+Wireshark.md
+宠物救助与开发平台.md
+测试基础/
+接口测试/
+功能测试/
+性能测试/
+07-resume/
+08-interview/
