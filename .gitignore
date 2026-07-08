@@ -1,0 +1,15 @@
+.DS_Store
+*.log
+*.tmp
+*.pcap
+*.pcapng
+node_modules/
+dist/
+target/
+uploads/
+
+# Local test exports that may contain tokens or machine-specific values
+postman/*local*.json
+postman/*environment*.json
+reports/raw/
+
