@@ -55,12 +55,12 @@
 
 ```json
 {
-  "account": "test_user",
-  "password": "123456"
+  "account": "{{testAccount}}",
+  "password": "{{testPassword}}"
 }
 ```
 
-说明：登录接口压测使用本地测试账号，公开报告中仅保留脱敏后的测试数据说明。
+说明：登录接口压测使用本地测试账号，通过 JMeter 参数传入账号和密码；公开报告中仅保留脱敏后的测试数据说明。
 
 ## 记录指标
 

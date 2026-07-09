@@ -40,6 +40,7 @@
 | `05-performance-testing/` | JMeter 基础性能测试方案 |
 | `06-bug-reports/` | 缺陷记录表 |
 | `07-function-testing/` | 功能测试执行记录 |
+| `08-performance-testing/` | 性能测试执行记录 |
 | `postman/` | Postman Collection 导出文件 |
 | `jmeter/` | JMeter 测试计划文件 |
 | `reports/` | 测试报告导出文件 |

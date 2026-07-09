@@ -26,6 +26,8 @@
 
 ## 核心主流程执行结果
 
+说明：本轮 Postman Collection 实际执行 20 条请求，其中 18 条对应核心接口用例；第 15 条“管理员查询领养申请”为保存 `adoptionRequestId` 的辅助请求，第 17/18 条分别验证管理员和普通用户都可以调用沟通消息接口。
+
 | 序号 | 用例编号 | 接口/操作 | 请求方式 | URL | 预期结果 | 实际结果 | 是否通过 | 证据 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | API_HEALTH_001 | 健康检查 | GET | `/api/health` | HTTP 200，`code=0` | 返回 HTTP 200，业务 `code=0` | 通过 | Postman 截图 |
@@ -43,9 +45,34 @@
 | 13 | API_ADOPTION_001 | 查询宠物列表 | GET | `/api/adoption/pets` | 列表包含公示中宠物 | 返回 HTTP 200，业务 `code=0` | 通过 | Postman 截图 |
 | 14 | API_ADOPTION_002 | 申请领养 | POST | `/api/adoption/requests` | 创建申请，保存 `adoptionRequestId` | 返回 HTTP 200，业务 `code=0` | 通过 | Postman 截图 |
 | 15 | API_ADMIN_ADOPTION_001 | 管理员进入沟通 | POST | `/api/admin/adoption/requests/{id}/start` | 状态变为沟通中 | 返回 HTTP 200，业务 `code=0`，已保存 `adoptionRequestId` | 通过 | Postman 截图 |
-| 16 | API_COMM_001 | 发送沟通消息 | POST | `/api/adoption/requests/{id}/messages` | 发送成功 | 返回 HTTP 200，业务 `code=0` | 通过 | Postman 截图 |
+| 16 | API_COMM_001 | 发送沟通消息 | POST | `/api/adoption/requests/{id}/messages` | 发送成功 | 管理员和用户分别发送沟通消息，均返回 HTTP 200，业务 `code=0` | 通过 | Postman 截图 |
 | 17 | API_ADMIN_ADOPTION_002 | 审核通过领养申请 | POST | `/api/admin/adoption/requests/{id}/approve` | 进入待签收/运输中 | 返回 HTTP 200，业务 `code=0` | 通过 | Postman 截图 |
 | 18 | API_ADOPTION_003 | 用户确认签收 | POST | `/api/adoption/requests/{id}/sign` | 签收成功，流程闭环 | 返回 HTTP 200，业务 `code=0`，Postman 断言 2/2 通过 | 通过 | Postman 截图 |
+
+## Postman 请求执行对照
+
+| 序号 | Postman 请求 | 对应用例 | 执行结果 |
+| --- | --- | --- | --- |
+| 1 | 01-健康检查 | API_HEALTH_001 | 通过 |
+| 2 | 02-普通用户注册 | API_AUTH_001 | 通过 |
+| 3 | 03-普通用户登录 | API_AUTH_002 | 通过 |
+| 4 | 04-管理员登录 | API_AUTH_003 | 通过 |
+| 5 | 05-获取当前用户 | API_AUTH_004 | 通过 |
+| 6 | 06-修改个人资料 | API_USER_001 | 通过 |
+| 7 | 07-发布救助信息 | API_RESCUE_001 | 通过 |
+| 8 | 08-管理员审核通过救助 | API_ADMIN_RESCUE_001 | 通过 |
+| 9 | 09-查询救助广场列表 | API_RESCUE_002 | 通过 |
+| 10 | 10-用户发表评论 | API_COMMENT_001 | 通过 |
+| 11 | 11-管理员收编救助信息 | API_ADMIN_RESCUE_002 | 通过 |
+| 12 | 12-管理员发布领养宠物 | API_ADMIN_PET_001 | 通过 |
+| 13 | 13-查询领养宠物列表 | API_ADOPTION_001 | 通过 |
+| 14 | 14-用户申请领养 | API_ADOPTION_002 | 通过 |
+| 15 | 15-管理员查询领养申请 | 辅助请求，用于保存 `adoptionRequestId` | 通过 |
+| 16 | 16-管理员进入沟通 | API_ADMIN_ADOPTION_001 | 通过 |
+| 17 | 17-管理员发送沟通消息 | API_COMM_001 | 通过 |
+| 18 | 18-用户发送沟通消息 | API_COMM_001 补充验证 | 通过 |
+| 19 | 19-管理员审核通过领养申请 | API_ADMIN_ADOPTION_002 | 通过 |
+| 20 | 20-用户确认签收 | API_ADOPTION_003 | 通过 |
 
 ## 分支与异常用例结果
 
@@ -68,6 +95,7 @@
 | --- | --- |
 | 计划执行用例数 | 18 |
 | 实际执行用例数 | 18 |
+| Postman 实际执行请求数 | 20 |
 | 通过数 | 18 |
 | 失败数 | 0 |
 | 阻塞数 | 0 |
@@ -77,7 +105,7 @@
 ```text
 本次使用 Postman 对 Pet-test 项目核心接口主流程进行测试，覆盖健康检查、普通用户注册登录、管理员登录、当前用户查询、个人资料修改、救助发布、管理员审核通过、救助列表查询、评论发布、管理员收编、管理员发布领养宠物、领养宠物列表查询、用户申请领养、管理员进入沟通、沟通消息、管理员审核通过和用户确认签收。
 
-共执行 18 条核心接口用例，实际执行 18 条，通过 18 条，失败 0 条，阻塞 0 条。核心接口主流程返回 HTTP 200 且业务 code=0，Postman 断言通过，核心业务链路验证通过。
+共执行 20 条 Postman 请求，对应 18 条核心接口用例；其中 1 条为保存领养申请 ID 的辅助查询请求，1 条为用户发送沟通消息的补充验证请求。核心接口用例实际执行 18 条，通过 18 条，失败 0 条，阻塞 0 条。核心接口主流程返回 HTTP 200 且业务 code=0，Postman 断言通过，核心业务链路验证通过。
 
 本轮未执行驳回分支和异常权限用例，后续可继续补充管理员驳回、登录失败、未登录访问、普通用户越权、缺少图片、重复申请等 P1 场景。
 ```
