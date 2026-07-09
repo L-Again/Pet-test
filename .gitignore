@@ -11,11 +11,14 @@ uploads/
 # Local test exports that may contain tokens or machine-specific values
 postman/*local*.json
 postman/*environment*.json
+api-testing/*local*.json
+api-testing/*environment*.json
 reports/raw/
 
 # Generated performance test outputs kept locally
 reports/jmeter/html-*/
 reports/jmeter/*.jtl
+performance-testing/output/
 
 # Local learning and preparation notes, not part of the public portfolio
 software-testing-handoff.md
